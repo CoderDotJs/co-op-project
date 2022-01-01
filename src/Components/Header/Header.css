@@ -61,11 +61,11 @@
 #basic-navbar-nav{
     font-size: 14px;
 }
-#basic-navbar-nav a{
+.user-login{
     text-decoration: none;
     color: black
 }
-#basic-navbar-nav a:hover{
+.user-login:hover{
     text-decoration: underline;
     color: #347758;
 }

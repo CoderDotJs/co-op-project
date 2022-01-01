@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 import './Header.css';
@@ -14,7 +14,7 @@ const Header = () => {
         <div className="top-header">
             <p className="special-offers-top">Special Offers! - <span style={{color: '#F4C340'}}>Get 50%</span> Off On Vegitables</p>
             <select className="select-language" >
-                <option selected>English</option>
+                <option defaultValue>English</option>
                 <option >Bangla</option>
             </select>
         </div>
@@ -25,16 +25,16 @@ const Header = () => {
         <Navbar bg="" expand="lg" className="d-flex align-items-center justify-content-center px-1">
           
             <Navbar.Brand href="#home">
-            <img class="hfe-site-logo-img elementor-animation- lazyloaded" src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="logo" data-ll-status="loaded" width="50%"/>
+            <img className="hfe-site-logo-img elementor-animation- lazyloaded" src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="logo" data-ll-status="loaded" width="50%"/>
             </Navbar.Brand>
             
 
             
         <form action="" className="mx-auto" style={{width: '50%'}}>
-          <div class="input-group border p-1">
-            <input type="search" placeholder="Search Products..." aria-describedby="button-addon3" class="form-control bg-none border-0 bg-transparent"/>
-            <div class="input-group-append border-0">
-              <button id="button-addon3" type="button" class="btn btn-link text-black"><i class="fa fa-search"></i></button>
+          <div className="input-group border p-1">
+            <input type="search" placeholder="Search Products..." aria-describedby="button-addon3" className="form-control bg-none border-0 bg-transparent"/>
+            <div className="input-group-append border-0">
+              <button id="button-addon3" type="button" className="btn btn-link text-black"><i className="fa fa-search"></i></button>
             </div>
           </div>
           
@@ -43,26 +43,26 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav d-flex justify-content-between align-items-center">
               <Nav className="mx-auto">
                 <Nav.Item className="d-flex justify-content-center align-items-center fw-normal mx-2">
-                    <i class="far fa-user"></i>
+                    <i className="far fa-user"></i>
                     <p style={{textAlign: 'left', margin: '0'}}>Hello, <br />
-                    <a href="##"> Sign In</a> or <a href="##">Register</a>
+                    <NavLink to="/login"  className="text-decoration-none text-black user-login">Log In</NavLink> or <NavLink to="signup" className="text-decoration-none text-black user-login">Register</NavLink>
                     </p>
                 </Nav.Item>
                 <Nav.Item className="mx-2">
-                <button type="button" class="border-0 p-0 position-relative">
-                <i class="far fa-heart"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
+                <button type="button" className="border-0 p-0 position-relative">
+                <i className="far fa-heart"></i>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                     0
-                    <span class="visually-hidden">Wishlists</span>
+                    <span className="visually-hidden">Wishlists</span>
                   </span>
                 </button>
                 </Nav.Item>
                 <Nav.Item className="mx-2">
-                <button type="button" class="border-0 p-0 position-relative">
-                <i class="fas fa-shopping-bag"></i>
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
+                <button type="button" className="border-0 p-0 position-relative">
+                <i class="fal fa-shopping-bag"></i>
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                     0
-                    <span class="visually-hidden">Cart</span>
+                    <span className="visually-hidden">Cart</span>
                   </span>
                 </button>
                 </Nav.Item>
@@ -75,40 +75,40 @@ const Header = () => {
 
 
         <Navbar className="category container my-2 z" >
-            <Container>
+            <Container className="d-flex justify-content-between align-items-center flex-wrap">
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/supplements' 
+                className="text-white text-decoration-none mx-2">
                     Supplements
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/fruits' 
+                className="text-white text-decoration-none mx-2">
                     Fruits
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/beverages' 
+                className="text-white text-decoration-none mx-2">
                     Beverages
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/dried' 
+                className="text-white text-decoration-none mx-2">
                     Dried
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/juice' 
+                className="text-white text-decoration-none mx-2">
                     Juice
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/meat' 
+                className="text-white text-decoration-none mx-2">
                     Meat
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/' 
-                className="text-white text-decoration-none">
+                to='/food' 
+                className="text-white text-decoration-none mx-2">
                     Food
                 </Nav.Item>
             </Container>

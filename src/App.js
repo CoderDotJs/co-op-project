@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import './App.css';
 import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
+import NotFoundPage from './Components/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}/>
+          <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer />
       </BrowserRouter>

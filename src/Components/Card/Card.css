@@ -1,0 +1,39 @@
+.card{
+    border-radius: 20px;
+    border-size: 2px;
+    z-index: 0;
+}
+.card-img-top{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.card{
+    position: relative;
+    overflow: hidden;
+}
+.icon-cart{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    z-index: 10;
+    cursor: pointer;
+}
+.add-to-cart-section{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    background: transparent;
+    right: -10rem;
+    top: 10rem;
+    transition: all 0.4s ease;
+}
+.card:hover .add-to-cart-section{
+    right: -1rem;
+}
+.icon-add-to-cart{
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    font-size: 20px;
+}

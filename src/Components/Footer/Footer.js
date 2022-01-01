@@ -9,14 +9,14 @@ const Footer = () => {
                 <div className="col-lg-5 col-md-8 col-sm-12">
                     <img src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="footer-logo" width="100px" className='my-3 d-inline'/>
                     <p className="text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur cumque nulla nesciunt quasi nostrum. Harum.</p>
-                    <p className="text-left"><i class="far fa-envelope"></i> softy.shop@softyshop.shop</p>
-                    <p className="text-left"><i class="far fa-phone-alt"></i> +934349838434</p>
-                    <p className="text-left"><i class="far fa-home-lg"></i> 70 West Road, NYC</p>
+                    <p className="text-left"><i className="far fa-envelope"></i> softy.shop@softyshop.shop</p>
+                    <p className="text-left"><i className="far fa-phone-alt"></i> +934349838434</p>
+                    <p className="text-left"><i className="far fa-home-lg"></i> 70 West Road, NYC</p>
                     <p className="text-left">
-                    <i class="fab fa-facebook-f mx-2"></i>
-                    <i class="fab fa-instagram mx-2"></i>
-                    <i class="fab fa-twitter mx-2"></i>
-                    <i class="fab fa-linkedin-in mx-2"></i>
+                    <i className="fab fa-facebook-f mx-2"></i>
+                    <i className="fab fa-instagram mx-2"></i>
+                    <i className="fab fa-twitter mx-2"></i>
+                    <i className="fab fa-linkedin-in mx-2"></i>
                     </p>
                 </div>
                 <div className="col-lg-2 col-md-4 col-sm-12">
