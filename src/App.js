@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import './App.css';
-import Banner from './Components/Banner/Banner';
+import Home from './Components/Home/Home';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -10,8 +11,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Banner />}/>
+          <Route path="/" element={<Home />}/>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
