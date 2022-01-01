@@ -1,0 +1,45 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+#banner{
+    height: 500px;
+    margin: -20px 0 20px 0;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-container{
+    position: relative;
+}
+.banner-container.banner-img-container {
+    position: absolute;
+}
+.banner-container .banner-text{
+    z-index: 10;
+    position: absolute;
+    text-align: left;
+    padding: 3rem;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    top: 3rem;
+}
+.banner-container .banner-text h1{
+    font-size: 5rem;
+}
+.banner-container .banner-text button{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background: #61CE70;
+    color: white;
+    font-size: 20px;
+    margin: 20px 0;
+}

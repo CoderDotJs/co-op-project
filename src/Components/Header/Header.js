@@ -74,7 +74,7 @@ const Header = () => {
         {/* category  */}
 
 
-        <Navbar className="category container my-2 ">
+        <Navbar className="category container my-2 z" >
             <Container>
                 <Nav.Item as={NavLink} 
                 to='/' 
