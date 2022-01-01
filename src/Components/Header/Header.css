@@ -1,0 +1,118 @@
+.select-language{
+    border: none;
+    outline: none; 
+    background: #F2F2F2;
+}
+.select-language select{
+    font-weight: bold;
+}
+.top-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    background: #F2F2F2;
+}
+.special-offers-top{
+    color: #656565;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.form-control:focus {
+    box-shadow: none;
+  }
+  
+  .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  header{
+      background: transparent;
+  }
+.input-group{
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+.fa-user{
+    padding: 15px;
+    font-size: 16px;
+    background-color: #DEEFC4;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 12px;
+    color: #347758;
+    margin-right: 10px;
+    transition: border-radius 0.4s ease;
+}
+.fa-user:hover{
+    border-radius: 5px;
+}
+#basic-navbar-nav{
+    font-size: 14px;
+}
+#basic-navbar-nav a{
+    text-decoration: none;
+    color: black
+}
+#basic-navbar-nav a:hover{
+    text-decoration: underline;
+    color: #347758;
+}
+.fa-heart{
+    padding: 15px;
+    font-size: 16px;
+    background-color: rgba(52,119,88,.1);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 12px;
+    color: rgba(52,119,88,1);
+    transition: border-radius 0.4s ease;
+}
+.fa-heart:hover{
+    border-radius: 5px;
+}
+.border-0.p-0.position-relative{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 12px;
+    transition: border-radius 0.4s ease;
+}
+.border-0.p-0.position-relative:hover{
+    border-radius: 5px;
+}
+.pill-bg{
+    background: #F4C340;
+    border: 2px solid white;
+}
+.fa-shopping-bag{
+    padding: 15px;
+    font-size: 16px;
+    background-color: rgba(244,195,64,.2);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 12px;
+    color: rgba(244,195,64,1);
+    transition: border-radius 0.4s ease;
+}
+.fa-shopping-bag:hover{
+    border-radius: 5px;
+}
+.category{
+    background: #347758;
+    color: white;
+    border-radius: 10px;
+}
