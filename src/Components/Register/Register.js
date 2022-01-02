@@ -51,7 +51,7 @@ const Register = () => {
                               <p className="text-center">By signing up you accept our <a href="##">Terms Of Use</a></p>
                            </div>
                            <div className="col-md-12 text-center ">
-                              <button type="submit" className=" btn px-4 btn-block mybtn btn-primary tx-tfm">Login</button>
+                              <button type="submit" className=" btn px-4 btn-block mybtn btn-primary tx-tfm">Register</button>
                            </div>
                            <div className="col-md-12 ">
                               <div className="login-or">
@@ -62,7 +62,7 @@ const Register = () => {
                            <div className="col-md-12 mb-3">
                               <p className="text-center">
                                  <a href="##" className="google btn mybtn"><i className="fab fa-google-plus">
-                                 </i> Login using Google
+                                 </i> Register using Google
                                  </a>
                               </p>
                            </div>
