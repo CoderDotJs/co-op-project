@@ -16,7 +16,7 @@ const Card = (props) => {
 
 
     return (
-        <div className="col">
+        <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div className="card h-100">
             <img src={img} className="card-img-top" alt={name}/>
             <i class="far fa-heart icon-cart" onClick={addToWishlist}></i>

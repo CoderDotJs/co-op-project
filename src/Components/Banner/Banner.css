@@ -43,3 +43,70 @@
     font-size: 20px;
     margin: 20px 0;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 575px){
+    .banner-container .banner-text h1{
+        font-size: 2rem;
+    }
+    .banner-container .banner-text h4,h5{
+        font-size: 0.9rem;
+    }
+    .banner-container .banner-text{
+        text-align: left;
+        padding: 2rem;
+        left: 0;
+        top: 7rem;
+    }
+    .banner-container .banner-text button{
+        padding: 0.5rem 1rem;
+        border-radius: 15px;
+        background: #61CE70;
+        color: white;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    .banner-container .banner-text h1{
+        font-size: 3.5rem;
+    }
+    .banner-container .banner-text h4,h5{
+        font-size: 1.5rem;
+    }
+    .banner-container .banner-text{
+        text-align: left;
+        padding: 2.5rem;
+        left: 0;
+        top: 4rem;
+    }
+    .banner-container .banner-text button{
+        padding: 0.7rem 1.5rem;
+        border-radius: 15px;
+        background: #61CE70;
+        color: white;
+        font-size: 18px;
+        margin: 18px 0;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .banner-container .banner-text h1{
+        font-size: 4rem;
+    }
+    .banner-container .banner-text h4,h5{
+        font-size: 1.5rem;
+    }
+    .banner-container .banner-text{
+        text-align: left;
+        padding: 2.8rem;
+        left: 0;
+        top: 4rem;
+    }
+    .banner-container .banner-text button{
+        padding: 0.85rem 1.8rem;
+        border-radius: 15px;
+        background: #61CE70;
+        color: white;
+        font-size: 20px;
+        margin: 20px 0;
+    }
+}
