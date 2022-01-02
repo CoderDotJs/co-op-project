@@ -288,7 +288,6 @@ const Products = () => {
               }
             </div>
         </div>
-        <Outlet />
         </>
     );
 };
