@@ -3,26 +3,18 @@ import { NavLink } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import './Card.css';
 
-const Card = (props) => {
+const Card = ({product, addToCart, addToWishlist}) => {
 
-    const {name, img, category ,price, review} = props.data;
-
-    const addToCart = () =>{
-        alert('Added to cart')
-    }
-    const addToWishlist = () =>{
-        alert('Added to wishlist')
-    }
-
+  const { name, img, category, price, review } = product;
 
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div className="card h-100">
             <img src={img} className="card-img-top" alt={name}/>
-            <i class="far fa-heart icon-cart" onClick={addToWishlist}></i>
+            <i className="far fa-heart icon-cart" onClick={() => addToWishlist(product)}></i>
 
             <div className="add-to-cart-section d-flex flex-column">
-            <i class="fal fa-shopping-bag icon-add-to-cart" onClick={addToCart}></i>
+            <i className="fal fa-shopping-bag icon-add-to-cart" onClick={() => addToCart(product)}></i>
             <i class="far fa-eye icon-add-to-cart"></i>
             </div>
             <NavLink to='/a' className="text-decoration-none">
