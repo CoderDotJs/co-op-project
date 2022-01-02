@@ -1,0 +1,17 @@
+.modal-cart{
+    width: 300px;
+}
+.modal-cart h6{
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.checkout-cart p{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.full-cart{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

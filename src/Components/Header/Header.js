@@ -1,6 +1,8 @@
-import React from 'react';
+import { Drawer, SwipeableDrawer } from '@mui/material';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import './Header.css';
@@ -8,6 +10,26 @@ import './Header.css';
 
 
 const Header = () => {
+
+  // states for drwer 
+
+  const [state, setState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
 
     return ( 
         <>
@@ -94,12 +116,21 @@ const Header = () => {
                 </Nav.Item>
                 <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
                 <button type="button" className="border-0 p-0 position-relative">
-                <i className="fal fa-shopping-bag"></i>
+                <i className="fal fa-shopping-bag" onClick={toggleDrawer('right', true)}></i>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                     0
                     <span className="visually-hidden">Cart</span>
                   </span>
                 </button>
+                <Drawer
+                  anchor={'right'}
+                  open={state['right']}
+                  sx={{width: '300px'}}
+                  onClose={toggleDrawer('right', false)}
+                  onOpen={toggleDrawer('right', true)}
+                >
+                    <Cart />
+                </Drawer>
                 
                 </Nav.Item>
               </Nav>
