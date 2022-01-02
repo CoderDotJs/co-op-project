@@ -28,6 +28,8 @@ const Products = () => {
         dispatch(addWishList(obj));
     }
 
+    // end of the code
+
     return (
         <div>
             <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-5">
