@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Card from '../Card/Card';
 
 const Products = () => {
@@ -258,13 +259,25 @@ const Products = () => {
         ]
     );
 
-    
-
-    console.log(products)
+    useEffect(()=>{
+        fetch('https://raw.githubusercontent.com/CoderDotJs/co-op-project/main/src/Components/Products/products.json')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    }, [])
     
 
     return (
+        <>
         <div>
+            <div className="container mx-auto d-flex justify-content-between my-5 align-items-center">
+                <p className='m-0'>Total Product found {products.length}</p>
+                <select class="form-select d-inline w-auto" aria-label=".form-select-lg example">
+                    <option value="Best Match">Best Match</option>
+                    <option value="Low to High">Low to High</option>
+                    <option value="High to Low">High to Low</option>
+                    <option value="All">All</option>
+                </select>
+            </div>
             <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-5">
               {
                 products.map(pro=>{
@@ -275,6 +288,8 @@ const Products = () => {
               }
             </div>
         </div>
+        <Outlet />
+        </>
     );
 };
 

@@ -5,7 +5,7 @@ import './Card.css';
 
 const Card = (props) => {
 
-    const {name, img, category ,price, review} = props.data;
+    const {name, img, category ,price, review, id} = props.data;
 
     const addToCart = () =>{
         alert('Added to cart')
@@ -25,7 +25,7 @@ const Card = (props) => {
             <i className="fal fa-shopping-bag icon-add-to-cart" onClick={addToCart}></i>
             <i className="far fa-eye icon-add-to-cart"></i>
             </div>
-            <NavLink to='/a' className="text-decoration-none">
+            <NavLink to={`/products/${category}/${id}`} className="text-decoration-none">
             <div className="card-body d-flex flex-column align-items-start">
                 <Rating ratingValue={review * 20} size={18} readonly={true}/>
               <p style={{

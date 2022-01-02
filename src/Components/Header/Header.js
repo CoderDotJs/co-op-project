@@ -25,7 +25,7 @@ const Header = () => {
 
         <Navbar bg="" expand="lg" className=" px-1 main-navbar">
           
-            <Navbar.Brand href="#home" className="grid-logo">
+            <Navbar.Brand as={NavLink} to="/" className="grid-logo">
             <img className="hfe-site-logo-img elementor-animation- lazyloaded" src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="logo" data-ll-status="loaded" width="50%"/>
             </Navbar.Brand>
             
@@ -113,37 +113,37 @@ const Header = () => {
         <Navbar className="category container my-2 z" >
             <Container className="d-flex justify-content-between align-items-center flex-wrap">
                 <Nav.Item as={NavLink} 
-                to='/supplements' 
+                to='/products/supplements'
                 className="text-white text-decoration-none mx-2">
                     Supplements
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/fruits' 
+                to='/products/fruits' 
                 className="text-white text-decoration-none mx-2">
                     Fruits
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/beverages' 
+                to='/products/beverages' 
                 className="text-white text-decoration-none mx-2">
                     Beverages
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/dried' 
+                to='/products/dried' 
                 className="text-white text-decoration-none mx-2">
                     Dried
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/juice' 
+                to='/products/juice' 
                 className="text-white text-decoration-none mx-2">
                     Juice
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/meat' 
+                to='/products/meat' 
                 className="text-white text-decoration-none mx-2">
                     Meat
                 </Nav.Item>
                 <Nav.Item as={NavLink} 
-                to='/food' 
+                to='/products/food' 
                 className="text-white text-decoration-none mx-2">
                     Food
                 </Nav.Item>

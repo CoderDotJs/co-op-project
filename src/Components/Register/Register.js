@@ -33,19 +33,19 @@ const Register = () => {
                    <form onSubmit={handleSubmit(onSubmit)} name="login">
                            <div className="form-group">
                               <label htmlFor="exampleInputEmail1">Email address</label>
-                              <input type="firstname" name="firstname"  className="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter First Name" {...register("firstName", { required: true })}/>
+                              <input type="firstname" name="firstname"  className="form-control" id="firstNameRegister" aria-describedby="emailHelp" placeholder="Enter First Name" {...register("firstName", { required: true })}/>
                            </div>
                            <div className="form-group">
                               <label htmlFor="exampleInputEmail1">Email address</label>
-                              <input type="lastName" name="lastName"  className="form-control" id="lastName" aria-describedby="emailHelp" placeholder="Enter Lastname" {...register("lastName", { required: true })}/>
+                              <input type="lastName" name="lastName"  className="form-control" id="lastNameRegister" aria-describedby="emailHelp" placeholder="Enter Lastname" {...register("lastName", { required: true })}/>
                            </div>
                            <div className="form-group">
                               <label htmlFor="exampleInputEmail1">Email address</label>
-                              <input type="email" name="email"  className="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email" {...register("email", { required: true })}/>
+                              <input type="email" name="email"  className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" {...register("email", { required: true })}/>
                            </div>
                            <div className="form-group">
                               <label htmlFor="exampleInputEmail1">Password</label>
-                              <input type="password" name="password" id="passwordLogin"  className="form-control" aria-describedby="emailHelp" placeholder="Enter Password" {...register("password", { pattern: /^[A-Za-z]+$/i })}/>
+                              <input type="password" name="password" id="password"  className="form-control" aria-describedby="emailHelp" placeholder="Enter Password" {...register("password", { pattern: /^[A-Za-z]+$/i })}/>
                            </div>
                            <div className="form-group">
                               <p className="text-center">By signing up you accept our <a href="##">Terms Of Use</a></p>
