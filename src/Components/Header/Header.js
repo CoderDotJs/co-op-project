@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
+import Login from '../Login/Login';
+import Register from '../Register/Register';
 import './Header.css';
 
 
@@ -44,9 +45,42 @@ const Header = () => {
               <Nav className="mx-auto navs">
                 <Nav.Item className="d-flex justify-content-center align-items-center fw-normal mx-2">
                     <i className="far fa-user"></i>
-                    <p style={{textAlign: 'left', margin: '0'}}>Hello, <br />
-                    <NavLink to="/login"  className="text-decoration-none text-black user-login">Log In</NavLink> or <NavLink to="signup" className="text-decoration-none text-black user-login">Register</NavLink>
-                    </p>
+
+                    {/* login and signup section  */}
+
+                    <div style={{textAlign: 'left', margin: '0'}}>
+                      Hello, <br />
+                    {/* <NavLink to="/login"  className="text-decoration-none text-black user-login" >Log In</NavLink>
+                     or 
+                     <NavLink to="signup" className="text-decoration-none text-black user-login">Register</NavLink> */}
+                     
+                     {/* login modal  */}
+
+                     <div className="d-inline-block p-0">
+                       <button type="button" className=" p-0 bg-transparent border-0 text-black dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style={{position: 'relative'}} data-bs-auto-close="outside" id="dropdownMenuClickableInside">
+                         Login
+                       </button>
+                       <div aria-labelledby="dropdownMenuClickableInside" className="dropdown-menu border-0 bg-transparent dropdown-menu-lg-end p-0" style={{position: 'absolute', top: '3.5rem', right: 0, width: 'auto'}} >
+                          <Login />
+                       </div>
+                     </div>
+
+                      <span> Or </span>
+
+
+                      {/* registration modal  */}
+
+                      <div className="d-inline-block p-0">
+                       <button type="button" className=" p-0 bg-transparent border-0 text-black dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" style={{position: 'relative'}} data-bs-auto-close="outside" id="dropdownMenuClickableInside">
+                         Register
+                       </button>
+                       <div aria-labelledby="dropdownMenuClickableInside" className="dropdown-menu border-0 bg-transparent dropdown-menu-lg-end p-0" style={{position: 'absolute', top: '3.5rem', right: 0, width: 'auto'}}>
+                         <Register />
+                       </div>
+                     </div>
+
+                    </div>
+
                 </Nav.Item>
                 <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
                 <button type="button" className="border-0 p-0 position-relative">
@@ -56,15 +90,17 @@ const Header = () => {
                     <span className="visually-hidden">Wishlists</span>
                   </span>
                 </button>
+                
                 </Nav.Item>
                 <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
                 <button type="button" className="border-0 p-0 position-relative">
-                <i class="fal fa-shopping-bag"></i>
+                <i className="fal fa-shopping-bag"></i>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                     0
                     <span className="visually-hidden">Cart</span>
                   </span>
                 </button>
+                
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>

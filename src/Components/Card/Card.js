@@ -19,11 +19,11 @@ const Card = (props) => {
         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div className="card h-100">
             <img src={img} className="card-img-top" alt={name}/>
-            <i class="far fa-heart icon-cart" onClick={addToWishlist}></i>
+            <i className="far fa-heart icon-cart" onClick={addToWishlist}></i>
 
             <div className="add-to-cart-section d-flex flex-column">
-            <i class="fal fa-shopping-bag icon-add-to-cart" onClick={addToCart}></i>
-            <i class="far fa-eye icon-add-to-cart"></i>
+            <i className="fal fa-shopping-bag icon-add-to-cart" onClick={addToCart}></i>
+            <i className="far fa-eye icon-add-to-cart"></i>
             </div>
             <NavLink to='/a' className="text-decoration-none">
             <div className="card-body d-flex flex-column align-items-start">

@@ -129,8 +129,14 @@
     display: block;
     margin: 0 auto;
 } 
+.dropdown-toggle::after{
+    border: none
+}
 .navbar-light .navbar-toggler-icon{
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCA1MCA1MCIKc3R5bGU9IiBmaWxsOiMwMDAwMDA7Ij48cGF0aCBkPSJNIDUgOCBBIDIuMDAwMiAyLjAwMDIgMCAxIDAgNSAxMiBMIDQ1IDEyIEEgMi4wMDAyIDIuMDAwMiAwIDEgMCA0NSA4IEwgNSA4IHogTSA1IDIzIEEgMi4wMDAyIDIuMDAwMiAwIDEgMCA1IDI3IEwgNDUgMjcgQSAyLjAwMDIgMi4wMDAyIDAgMSAwIDQ1IDIzIEwgNSAyMyB6IE0gNSAzOCBBIDIuMDAwMiAyLjAwMDIgMCAxIDAgNSA0MiBMIDQ1IDQyIEEgMi4wMDAyIDIuMDAwMiAwIDEgMCA0NSAzOCBMIDUgMzggeiI+PC9wYXRoPjwvc3ZnPg==);
+}
+.index{
+    z-index: 999;
 }
 
 
@@ -168,12 +174,16 @@
         box-shadow: 5px 5px 5px gray;
         border-radius: 20px;
     }
+    
     .top-header{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 10px 0;
+    }
+    .modal{
+        display: block;
     }
     
 }
@@ -213,6 +223,9 @@
         padding: 15px;
         box-shadow: 5px 5px 5px gray;
         border-radius: 20px;
+    }
+    .modal{
+        display: block;
     }
     
 }
