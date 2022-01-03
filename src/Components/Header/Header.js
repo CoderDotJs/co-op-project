@@ -7,7 +7,8 @@ import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import './Header.css';
-import Wishlist from '../Wishlist/Wishlist'
+import Wishlist from '../Wishlist/Wishlist';
+
 
 
 const Header = () => {
