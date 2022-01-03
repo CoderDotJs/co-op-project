@@ -1,6 +1,7 @@
 import { Drawer, SwipeableDrawer } from '@mui/material';
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
@@ -11,8 +12,9 @@ import './Header.css';
 
 const Header = () => {
 
-  // states for drwer 
+  const cart = useSelector((state) => state.products.cart);
 
+  // states for drwer 
   const [state, setState] = useState({
     top: false,
     left: false,
@@ -118,7 +120,7 @@ const Header = () => {
                 <button type="button" className="border-0 p-0 position-relative">
                 <i className="fal fa-shopping-bag" onClick={toggleDrawer('right', true)}></i>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
-                    0
+                    {cart.length}
                     <span className="visually-hidden">Cart</span>
                   </span>
                 </button>

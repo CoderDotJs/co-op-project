@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import {useDispatch, useSelector} from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import { styled } from '@mui/material/styles';
@@ -9,6 +10,7 @@ import Box from '@mui/material/Box';
 import './ViewProduct.css';
 import { Typography } from '@mui/material';
 import Card from '../Card/Card';
+import { addProduct, setProducts } from '../../redux/slice';
 
 const AntTabs = styled(Tabs)({
     borderBottom: '1.2px solid #000',
@@ -71,52 +73,37 @@ const AntTabs = styled(Tabs)({
   }
 
 
-
-
 const ViewProduct = () => {
-    const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
+  const cart = useSelector((state) => state.products.cart);
+  const products = useSelector((state) => state.products.allProducts);
+  const dispatch = useDispatch()
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
 
     const {productId} = useParams();
-    const [product, setProduct] = useState([]);
-    const [quantity, setQuantity] = useState(1);
-    let limit = 5;
-
-    const handleQuantity = (para) => {
-        if(para === true){
-            if(quantity === limit){
-                setQuantity(limit)
-            }
-            else{
-                setQuantity(quantity + 1)
-            }
-        }
-        else{
-            if(quantity === 1){
-                setQuantity(1);
-            }
-            else{
-                setQuantity(quantity - 1)
-            }
-        }
-    }
     
 
     useEffect(()=>{
         fetch('https://raw.githubusercontent.com/CoderDotJs/co-op-project/main/src/Components/Products/products.json')
         .then(res => res.json())
-        .then(data => setProduct(data))
+        .then(data => dispatch(setProducts(data)))
     }, [])
 
-    const productView = product.filter(pro => Number(pro.id) === Number(productId));
+    const productView = products.filter(pro => Number(pro.id) === Number(productId));
 
     const category = productView[0]?.category;
 
-    const relatedProducts = product.filter(pro => pro.category.toLocaleLowerCase() === category.toLocaleLowerCase())
+    const relatedProducts = products.filter(pro => pro.category.toLocaleLowerCase() === category.toLocaleLowerCase())
 
+  // add to cart
+  const addToCart = (product) => {
+    const obj = { ...product };
+    obj.quantity = 1;
+    dispatch(addProduct(obj));
+}
     
 
     return (
@@ -136,14 +123,7 @@ const ViewProduct = () => {
                    ${productView[0]?.price}
               </p>
               <span className="text-muted fw-light">Tax Included</span>
-                <div className="quantity-counter my-3">
-                    <button id="inc" onClick={()=>{
-                        handleQuantity(false)
-                    }}><i class="fal fa-minus"></i></button>
-                    <input type="number" min="1" value={quantity} disabled/>
-                    <button id="dec" onClick={()=> handleQuantity(true)}><i class="fal fa-plus"></i></button>
-                </div>
-                <Button variant="dark" className="d-block w-100 mx-auto my-2" >ADD TO CART</Button>
+                <Button variant="dark" className="d-block w-100 mx-auto my-2" onClick={() => dispatch(addToCart(productView[0]))} >ADD TO CART</Button>
                 <Button variant="outline-dark" className="d-block w-100 mx-auto mt-2">BUY IT NOW</Button>
                 <div className="share-card d-flex justify-content-between align-items-center my-2">
                     <p className="m-0">Share:
@@ -205,7 +185,7 @@ const ViewProduct = () => {
         {
             relatedProducts.map(p =>{
                 return(
-                    <Card key={p.id} data={p} />
+                    <Card key={p.id} product={p} />
                 );
             })
         }
