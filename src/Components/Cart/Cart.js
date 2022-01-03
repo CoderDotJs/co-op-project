@@ -10,23 +10,24 @@ const Cart = () => {
     const [quantity, setQuantity] = useState(1);
     let limit = 5;
 
-    const handleQuantity = (para) => {
-        if(para === true){
-            if(quantity === limit){
-                setQuantity(limit)
-            }
-            else{
-                setQuantity(quantity + 1)
-            }
-        }
-        else{
-            if(quantity === 1){
-                setQuantity(1);
-            }
-            else{
-                setQuantity(quantity - 1)
-            }
-        }
+    const handleQuantity = (e,para) => {
+        console.log(e.target);
+        // if(para === true){
+        //     if(quantity === limit){
+        //         setQuantity(limit)
+        //     }
+        //     else{
+        //         setQuantity(quantity + 1)
+        //     }
+        // }
+        // else{
+        //     if(quantity === 1){
+        //         setQuantity(1);
+        //     }
+        //     else{
+        //         setQuantity(quantity - 1)
+        //     }
+        // }
     }
 
     return (
