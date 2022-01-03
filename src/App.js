@@ -8,6 +8,9 @@ import NotFoundPage from './Components/NotFoundPage/NotFoundPage';
 import Products from './Components/Products/Products';
 import FilteredProduct from './Components/FilteredProduct/FilteredProduct';
 import ViewProduct from './Components/ViewProduct/ViewProduct';
+import Login from './Components/Login/Login';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -15,11 +18,13 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/products/:category" element={<FilteredProduct />}/>
+          <Route path="/products/:category" element={<FilteredProduct />} />
           <Route path="/products/:category/:productId" element={<ViewProduct />}></Route>
-          <Route path="*" element={<NotFoundPage />}/>
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
+          <Route path="*" element={<NotFoundPage />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>
