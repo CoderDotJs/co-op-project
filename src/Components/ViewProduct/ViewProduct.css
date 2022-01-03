@@ -26,13 +26,14 @@ input[type=number] {
     border: none;
     font-size: 16px;
     background-color: transparent;
+    z-index: 0;
 }
 .quantity-counter #inc{
     position: absolute;
     left: 5px;
     display: inline-block;
     height: 100%;
-    z-index: 3;
+    z-index: 99;
     border: none;
     background: transparent;
     font-size: 15px;
@@ -43,7 +44,7 @@ input[type=number] {
     position: absolute;
     right: 5px;
     height: 100%;
-    z-index: 3;
+    z-index: 99;
     border: none;
     background: transparent;
     font-size: 15px;

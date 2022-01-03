@@ -10,8 +10,8 @@ const Products = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('./products.json')
-            .then(res => res.json())
+        fetch('https://raw.githubusercontent.com/CoderDotJs/co-op-project/main/src/Components/Products/products.json')
+        .then(res => res.json())
         .then(data => dispatch(setProducts(data)))
     }, [])
 

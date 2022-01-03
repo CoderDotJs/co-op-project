@@ -1,4 +1,4 @@
-import { Drawer, SwipeableDrawer } from '@mui/material';
+import { Drawer } from '@mui/material';
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
@@ -7,10 +7,15 @@ import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import './Header.css';
+import Wishlist from '../Wishlist/Wishlist'
+import { useSelector } from 'react-redux';
 
 
 
 const Header = () => {
+  const products = useSelector((state) => state.products);
+
+  const {allProducts, cart, wishList} = products;
 
   const cart = useSelector((state) => state.products.cart);
 
@@ -31,6 +36,24 @@ const Header = () => {
     }
 
     setState({ ...state, [anchor]: open });
+  };
+
+  const [wishlistState, setWishlistState] = useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+  const toggleDrawerWishlist = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setWishlistState({ ...wishlistState, [anchor]: open });
   };
 
     return ( 
@@ -107,18 +130,27 @@ const Header = () => {
 
                 </Nav.Item>
                 <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
-                <button type="button" className="border-0 p-0 position-relative">
+                <button type="button" className="border-0 p-0 position-relative" onClick={toggleDrawerWishlist('right', true)}>
                 <i className="far fa-heart"></i>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
-                    0
+                    {wishList.length}
                     <span className="visually-hidden">Wishlists</span>
                   </span>
                 </button>
+
+                <Drawer
+                  anchor={'right'}
+                  open={wishlistState['right']}
+                  sx={{width: '300px'}}
+                  onClose={toggleDrawerWishlist('right', false)}
+                >
+                    <Wishlist />
+                </Drawer>
                 
                 </Nav.Item>
                 <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
-                <button type="button" className="border-0 p-0 position-relative">
-                <i className="fal fa-shopping-bag" onClick={toggleDrawer('right', true)}></i>
+                <button type="button" className="border-0 p-0 position-relative" onClick={toggleDrawer('right', true)}>
+                <i className="fal fa-shopping-bag"></i>
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                     {cart.length}
                     <span className="visually-hidden">Cart</span>
@@ -129,7 +161,6 @@ const Header = () => {
                   open={state['right']}
                   sx={{width: '300px'}}
                   onClose={toggleDrawer('right', false)}
-                  onOpen={toggleDrawer('right', true)}
                 >
                     <Cart />
                 </Drawer>
