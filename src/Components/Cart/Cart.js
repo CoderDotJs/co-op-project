@@ -6,9 +6,7 @@ import './Cart.css'
 
 const Cart = () => {
 
-    // const [cart, setCart] = useState([])
-    // const [quantity, setQuantity] = useState(1);
-    // let limit = 5;
+
 
     const cart = useSelector((state) => state.products.cart);
     const totalPrice = useSelector((state) => state.products.totalPrice);
@@ -56,8 +54,13 @@ const Cart = () => {
                     cart?.map(product => <>
                         <Row className="m-0">
                     {/* cart item img  */}
-                    <Col lg={4} md={4} sm={4} xs={4}>
-                        <img src={product?.img} alt="" className="img-responsive w-100"/>
+                    <Col lg={4} md={4} sm={4} xs={4} className="d-flex align-items-center">
+
+                        {/* cart item remove  */}
+                        <button onClick={() => handleRemoveCartItem(product)} className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0"><i class="fal fa-times-circle"></i></button> 
+
+                        <img src={product?.img} alt={product?.name} className="img-responsive w-100"/>
+
                     </Col>
                     {/* cart item text  */}
                     <Col lg={8} md={8} sm={8} xs={8} className="row m-0 p-0">
@@ -81,8 +84,7 @@ const Cart = () => {
                                 </div> 
                                 </Col>
                         </Row>
-                        {/* cart item remove  */}
-                        <button onClick={() => handleRemoveCartItem(product)} className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0">REMOVE</button> 
+
                     </Col>
                     </Row>
                 </>)

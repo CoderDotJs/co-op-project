@@ -108,12 +108,13 @@ const ViewProduct = () => {
 
     return (
     <>
-        <Container style={{textAlign: 'left'}} className="my-5">
+        <Container style={{textAlign: 'left'}} className="">
             <Row>
                 <Col lg={6} md={6} sm={12}>
                     <img src={productView[0]?.img} alt="" className="img-responsive w-100"/>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={6} md={6} sm={12} className="d-flex align-items-center">
+                    <div className="w-100">
                     <h2 className="my-2">{productView[0]?.name}</h2>
                     <Rating ratingValue={productView[0]?.review * 20} size={18} readonly={true}/>
                     <p className="mt-2" style={{
@@ -147,6 +148,7 @@ const ViewProduct = () => {
                    </div>
                 </div>
                 <img src="https://demo.casethemes.net/organio/wp-content/uploads/2021/07/f7-payment.png" alt="payment" className="d-block mx-auto"/>
+                    </div>
                 </Col>
             </Row>
         </Container>

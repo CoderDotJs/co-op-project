@@ -15,7 +15,7 @@ const Wishlist = () => {
 
             {/* cart item  */}
 
-            <div className="full-cart">
+            <div className="d-flex flex-column">
             {
                 wishlist.map(wish=>{
                     return(
