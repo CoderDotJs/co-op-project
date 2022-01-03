@@ -30,9 +30,10 @@ const Cart = () => {
 
             {/* cart item  */}
             <div className="full-cart">
+                <div>
                 { !cart.length ? <h4 className="text-center mt-5">Cart Empty</h4> :
                     cart?.map(product => <>
-                        <Row className="m-0">
+                        <Row className="m-0 border-bottom">
                     {/* cart item img  */}
                     <Col lg={4} md={4} sm={4} xs={4} className="d-flex align-items-center">
 
@@ -67,8 +68,9 @@ const Cart = () => {
 
                     </Col>
                     </Row>
-                </>)
-            }
+                    </>)
+                }
+                </div>
 
             <div className="my-3 checkout-cart">
                 <p className="d-flex justify-content-between align-items-center mx-0 px-2 my-2"><span className="total">Total:</span> <span>${totalPrice}</span></p>
