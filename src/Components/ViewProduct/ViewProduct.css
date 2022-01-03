@@ -1,0 +1,52 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.quantity-counter{
+    width: 100px;
+    height: 40px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid rgb(236, 236, 236);
+}
+.quantity-counter input{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+}
+.quantity-counter #inc{
+    position: absolute;
+    left: 5px;
+    display: inline-block;
+    height: 100%;
+    z-index: 3;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0 5px
+}
+.quantity-counter #dec{
+    position: absolute;
+    right: 5px;
+    height: 100%;
+    z-index: 3;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 0 5px
+}
