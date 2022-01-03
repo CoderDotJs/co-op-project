@@ -7,12 +7,7 @@ import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import './Header.css';
-<<<<<<< HEAD
 import Wishlist from '../Wishlist/Wishlist'
-=======
-import Wishlist from '../Wishlist/Wishlist';
->>>>>>> 8a3c0344784da8aedb74380df9060791e1121142
-
 
 
 const Header = () => {
