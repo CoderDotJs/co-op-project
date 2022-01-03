@@ -8,14 +8,13 @@ import Login from '../Login/Login';
 import Register from '../Register/Register';
 import './Header.css';
 import Wishlist from '../Wishlist/Wishlist'
-import { useSelector } from 'react-redux';
 
 
 
 const Header = () => {
   const products = useSelector((state) => state.products);
 
-  const {allProducts, cart, wishList} = products;
+  const {allProducts, wishList} = products;
 
   const cart = useSelector((state) => state.products.cart);
 

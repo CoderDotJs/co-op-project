@@ -1,17 +1,22 @@
 import React from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeWishProduct } from '../../redux/slice';
 
 const Wishlist = () => {
 
     const wishlist = useSelector((state) => state.products.wishList);
+    const dispatch = useDispatch();
     console.log('Wishlists > ', wishlist)
 
+    const handleRemoveWishProduct = (product) => {
+        dispatch(removeWishProduct(product));
+    }
 
     return (
         <div>
                     <div className="modal-cart">
-            <h6 className="text-left">You Wishlist ({wishlist.length})</h6>
+            <h6 className="text-left">Wishlist Items ({wishlist.length})</h6>
 
             {/* cart item  */}
 
@@ -41,7 +46,7 @@ const Wishlist = () => {
 
                             {/* qunatity inc dec  */}
 
-                        <button className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0">REMOVE</button>
+                        <button onClick={() => handleRemoveWishProduct(wish)} className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0">REMOVE</button>
                         
                         
                         </Col>

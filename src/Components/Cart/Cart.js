@@ -18,33 +18,13 @@ const Cart = () => {
         dispatch(removeProduct(productId));
     }
 
-    // const handleQuantity = (para) => {
-    //     if(para === true){
-    //         if(quantity === limit){
-    //             setQuantity(limit)
-    //         }
-    //         else{
-    //             setQuantity(quantity + 1)
-    //         }
-    //     }
-    //     else{
-    //         if(quantity === 1){
-    //             setQuantity(1);
-    //         }
-    //         else{
-    //             setQuantity(quantity - 1)
-    //         }
-    //     }
-    // }
+    const handleIncrementQuantity = (product) => {
+        dispatch(incrementQuantity(product));
+    }
 
-    // const handleIncrementQuantity = (product) => {
-    //     console.log(product);
-    //     dispatch(incrementQuantity(product));
-    // }
-
-    // const handleDecrementQuantity = (product) => {
-        
-    // }
+    const handleDecrementQuantity = (product) => {
+        dispatch(decrementQuantity(product));
+    }
 
     return (
         <div className="modal-cart">
@@ -71,11 +51,11 @@ const Cart = () => {
                                 <p className="fw-semibold m-0">${product.price}</p>
                                     {/* qunatity inc dec  */}
                                 <div className="quantity-counter my-2 mx-1">
-                                    <button id="inc">
+                                    <button id="inc" onClick={() => handleDecrementQuantity(product)}>
                                         <i class="fal fa-minus"></i>
                                     </button>
                                     <input type="number" min="1" value={product?.quantity} disabled/>
-                                    <button type="button" id="dec">
+                                    <button id="dec" onClick={() => handleIncrementQuantity(product)}>
                                         <i class="fal fa-plus"></i>
                                     </button>
                                 </div> 

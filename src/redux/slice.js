@@ -31,11 +31,20 @@ export const productsReducer = createSlice({
           state.cart = state.cart.filter(pd => pd.id != payload.id);
           state.totalPrice -= payload.price * payload.quantity;
       },
+      removeWishProduct: (state, { payload }) => {
+          state.wishList = state.wishList.filter(pd => pd.id != payload.id);
+      },
       incrementQuantity: (state, { payload }) => {
-          
+          const selectProduct = state.cart.find(pd => pd.id === payload.id);
+          selectProduct.quantity += 1;
+          state.totalPrice += payload.price;
       },
       decrementQuantity: (state, { payload }) => {
-          
+          const selectProduct = state.cart.find(pd => pd.id === payload.id);
+          if (selectProduct.quantity > 1) {
+              selectProduct.quantity -= 1;
+              state.totalPrice -= payload.price;
+          }
       },
       addWishList: (state, { payload }) => {
           state.wishList = [...state.wishList, payload];
@@ -43,6 +52,6 @@ export const productsReducer = createSlice({
   },
 })
 
-export const { setProducts, addProduct, addWishList, removeProduct, incrementQuantity,  decrementQuantity} = productsReducer.actions
+export const { setProducts, addProduct, addWishList, removeProduct, incrementQuantity,  decrementQuantity, removeWishProduct} = productsReducer.actions
 
 export default productsReducer.reducer
