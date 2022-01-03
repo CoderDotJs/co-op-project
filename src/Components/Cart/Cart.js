@@ -6,7 +6,6 @@ import './Cart.css'
 
 const Cart = () => {
 
-
     const [cart, setCart] = useState([])
     const [quantity, setQuantity] = useState(1);
     let limit = 5;
