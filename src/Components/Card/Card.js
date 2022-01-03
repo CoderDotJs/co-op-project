@@ -3,40 +3,20 @@ import { NavLink } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
 import './Card.css';
 
-<<<<<<< HEAD
-const Card = ({product, addToCart, addToWishlist}) => {
-=======
-const Card = (props) => {
+const Card = ({product, addToCart, addToWishlist }) => {
 
-    const {name, img, category ,price, review, id} = props.data;
-
-    const addToCart = () =>{
-        alert('Added to cart')
-    }
-    const addToWishlist = () =>{
-        alert('Added to wishlist')
-    }
->>>>>>> origin/main
-
-  const { name, img, category, price, review } = product;
+  const { name, img, category, price, review, id } = product;
+  console.log(product)
 
     return (
         <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <div className="card h-100">
             <img src={img} className="card-img-top" alt={name}/>
-<<<<<<< HEAD
             <i className="far fa-heart icon-cart" onClick={() => addToWishlist(product)}></i>
 
             <div className="add-to-cart-section d-flex flex-column">
             <i className="fal fa-shopping-bag icon-add-to-cart" onClick={() => addToCart(product)}></i>
             <i class="far fa-eye icon-add-to-cart"></i>
-=======
-            <i className="far fa-heart icon-cart" onClick={addToWishlist}></i>
-
-            <div className="add-to-cart-section d-flex flex-column">
-            <i className="fal fa-shopping-bag icon-add-to-cart" onClick={addToCart}></i>
-            <i className="far fa-eye icon-add-to-cart"></i>
->>>>>>> origin/main
             </div>
             <NavLink to={`/products/${category}/${id}`} className="text-decoration-none">
             <div className="card-body d-flex flex-column align-items-start">
