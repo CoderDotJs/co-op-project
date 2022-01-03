@@ -15,7 +15,7 @@ const Card = ({product, addToCart, addToWishlist}) => {
 
             <div className="add-to-cart-section d-flex flex-column">
             <i className="fal fa-shopping-bag icon-add-to-cart" onClick={() => addToCart(product)}></i>
-            <i class="far fa-eye icon-add-to-cart"></i>
+            <i className="far fa-eye icon-add-to-cart"></i>
             </div>
             <NavLink to={`/products/${category}/${id}`} className="text-decoration-none">
             <div className="card-body d-flex flex-column align-items-start">
