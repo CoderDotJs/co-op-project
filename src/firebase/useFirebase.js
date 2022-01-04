@@ -18,11 +18,15 @@ const useFirebase = () => {
             .then((userCredential) => {
                 setAuthError("");
                 const user = userCredential.user;
-                const newUser = { email, displayName: name };
+                const newUser = { email, displayName: name, roll: "client" };
+
+                // add user in database
+                saveUserDB(newUser);
+
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
-                    
+
                 }).catch((error) => {
 
                 });
@@ -71,12 +75,42 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                // console.log(user)
+                const addUser ={
+                    email: user.email,displayName:user.displayName, roll: "client"
+                }
+                // console.log(user.email)
+                isAddUser(user.email, addUser);
+
+                
+
                 setAuthError('')
             }).catch((error) => {
                 setAuthError(error.message);
             })
             .finally(() => setIsLoading(false));
+    }
+
+       //save user  in database
+       const saveUserDB = (user) =>{
+        fetch('https://softy-shop-web.herokuapp.com/addUser',{
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user) 
+        }).then(res => res.json)
+        .then(data => console.log(data))
+    }
+    //check user in database
+    const isAddUser = (email, addUser) =>{
+        fetch(`https://softy-shop-web.herokuapp.com/user/${email}`)
+        .then(res => res.json())
+        .then(data => {
+            if(data.length === 0){
+                console.log(data)
+                saveUserDB(addUser)
+                // console.log(addUser);
+                
+        }
+    })
     }
 
     // log out function
