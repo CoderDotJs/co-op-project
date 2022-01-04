@@ -8,6 +8,8 @@ import NotFoundPage from './Components/NotFoundPage/NotFoundPage';
 import Products from './Components/Products/Products';
 import FilteredProduct from './Components/FilteredProduct/FilteredProduct';
 import ViewProduct from './Components/ViewProduct/ViewProduct';
+import Checkout from './Components/Checkout/Checkout';
+import Payment from './Components/Payment/Payment';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<FilteredProduct />}/>
           <Route path="/products/:category/:productId" element={<ViewProduct />}></Route>
+          <Route path="/products/checkout" element={<Checkout />}/>
+          <Route path="/products/checkout/payment" element={<Payment />}/>
           <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer />
