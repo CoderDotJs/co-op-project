@@ -12,6 +12,7 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Checkout from './Components/Checkout/Checkout';
+import Payment from './Components/Payment/Payment';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/products/:category" element={<FilteredProduct />} />
           <Route path="/products/:category/:productId" element={<ViewProduct />}></Route>
           <Route path="/products/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>}></Route>
+          <Route path="/products/payment" element={<PrivateRoute><Payment /></PrivateRoute>}></Route>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
           <Route path="*" element={<NotFoundPage />} />
 

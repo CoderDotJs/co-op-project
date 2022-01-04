@@ -13,13 +13,13 @@ const Dashboard = () => {
     const handleShow = () => setShow(true);
 
     return (
-        <div className="dashboard-area">
+        <div className="dashboard-area my-5">
             <Container fluid className="ps-0">
                 <Row className="p-0">
                     <Col lg={2} className="p-0">
                         <div className="side-navbar desktop">
                             <Link to="/" className="logo">
-                                <img style={{ width: "120px" }} src="https://singinghands.co.uk/wp-content/uploads/2016/06/something-special-makaton-1.jpg" alt="" />
+                                <img style={{ width: "120px" }} src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" />
                             </Link>
 
                             <div className="dashboard-menu">
@@ -82,7 +82,7 @@ const Dashboard = () => {
                             <Offcanvas.Header closeButton></Offcanvas.Header>
                             <div className="side-navbar">
                                 <Link to="/" className="logo">
-                                    <img style={{ width: "120px" }} src="https://singinghands.co.uk/wp-content/uploads/2016/06/something-special-makaton-1.jpg" alt="" />
+                                    <img style={{ width: "120px" }} src="https://demo2wpopal.b-cdn.net/ecolive/wp-content/uploads/2021/10/logo.svg" alt="" />
                                 </Link>
 
                                 <div className="dashboard-menu">

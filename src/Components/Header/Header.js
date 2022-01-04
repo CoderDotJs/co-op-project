@@ -2,7 +2,7 @@ import { Button, Drawer } from '@mui/material';
 import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
@@ -16,6 +16,7 @@ const Header = () => {
 
   const { user, logOut } = useFirebase();
   const products = useSelector((state) => state.products);
+  const navigate = useNavigate();
 
   const { allProducts, wishList } = products;
 
@@ -93,7 +94,11 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="" >
           <Nav className="mx-auto navs">
             <Nav.Item className="d-flex justify-content-center align-items-center fw-normal mx-2">
-              <i className="far fa-user"></i>
+              <i 
+              className="far fa-user " 
+              style={{cursor: 'pointer'}} 
+              onClick={()=>navigate('/dashboard')}
+              ></i>
 
 
 
