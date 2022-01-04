@@ -6,8 +6,6 @@ import './Cart.css'
 
 const Cart = () => {
 
-
-
     const cart = useSelector((state) => state.products.cart);
     const totalPrice = useSelector((state) => state.products.totalPrice);
     const dispatch = useDispatch();
