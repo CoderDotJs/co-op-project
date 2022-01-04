@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
     const cart = useSelector((state) => state.products.cart);
@@ -12,6 +13,8 @@ const Checkout = () => {
     const onSubmit = (data) => {
         console.log(data)
       };
+
+      const navigate=useNavigate();
 
     return (
 
@@ -69,7 +72,7 @@ const Checkout = () => {
                                                 <div className="row justify-content-end my-3">
 
                                                 <div className="form-group col-sm-12"> 
-                                                <Button variant="outline-dark" type="submit" className="d-block mx-auto w-100">Place Order</Button> 
+                                                <Button variant="outline-dark" type="submit" className="d-block mx-auto w-100"       onClick={()=>navigate('/products/payment')}>Place Order</Button> 
                                                 </div>
                                             </div>
                                         </form>
