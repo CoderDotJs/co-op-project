@@ -24,7 +24,7 @@ const Wishlist = () => {
             {
                 wishlist.map(wish=>{
                     return(
-                        <Row className="m-0 border-bottom">
+                        <Row className="m-0 border-bottom" key={wish.id}>
 
                 {/* cart item img  */}
 
