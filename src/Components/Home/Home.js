@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Banner from '../Banner/Banner';
-import Products from '../Products/Products';
 import CustomerReview from '../CustormerReview/CustomerReview';
 import SubBanner from './../SubBanner/SubBanner';
 import WhyUs from './../WhyUs/WhyUs';
@@ -30,7 +29,9 @@ const Home = () => {
             .then(res => res.json())
             .then(data => dispatch(setProducts(data)))
         }, [])
+        
         const products = useSelector((state) => state.products.allProducts);
+
     return (
         <div>
             <Banner />
