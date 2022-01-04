@@ -11,15 +11,16 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "firebase": "^9.6.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.0",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.0",
     "react-simple-star-rating": "^4.0.5",
     "redux": "^4.1.2",
+    "sweetalert2": "^11.3.3",
     "swiper": "^7.4.1",
     "web-vitals": "^2.1.2"
   },
@@ -46,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.0"
   }
 }
