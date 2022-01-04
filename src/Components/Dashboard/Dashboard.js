@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { Button, Col, Container, Offcanvas, Row } from "react-bootstrap";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -8,10 +8,21 @@ const Dashboard = () => {
 
     const { user, logOut } = useFirebase();
     const [show, setShow] = useState(false);
-
+    const [userInfo, setUserInfo] = useState({});
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    useEffect(() => {
+        fetch(`https://softy-shop-web.herokuapp.com/user/${user.email}`)
+            .then(res => res.json())
+            .then(data => setUserInfo(data[0]))
+
+    }, [user])
+
+    console.log(userInfo)
+    if (!userInfo) {
+        return <h1>Loading..</h1>
+    }
     return (
         <div className="dashboard-area">
             <Container fluid className="ps-0">
@@ -24,51 +35,51 @@ const Dashboard = () => {
 
                             <div className="dashboard-menu">
                                 <ul>
-                                    <>
-                                        <li>
-                                            <NavLink end to="/dashboard/myOrder">
-                                                My Orders
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/dashboard/customerReview">
-                                                My Reviews
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/home">
-                                                Back To Home
-                                            </NavLink>
-                                        </li>
-                                    </>
-
-                                    <>
-                                        <li>
-                                            <NavLink end to="/dashboard/manageOrders">
-                                                Manage Orders
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/dashboard/addProducts">
-                                                Add Products
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/dashboard/manageProducts">
-                                                Manage Products
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/dashboard/makeAdmin">
-                                                Make an Admin
-                                            </NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink end to="/home">
-                                                Back To Home
-                                            </NavLink>
-                                        </li>
-                                    </>
+                                    {
+                                        userInfo?.roll === "admin" ? <>
+                                            <li>
+                                                <NavLink end to="/dashboard/manageOrders">
+                                                    Manage Orders
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/dashboard/addProducts">
+                                                    Add Products
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/dashboard/manageProducts">
+                                                    Manage Products
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/dashboard/makeAdmin">
+                                                    Make an Admin
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/home">
+                                                    Back To Home
+                                                </NavLink>
+                                            </li>
+                                        </> : <>
+                                            <li>
+                                                <NavLink end to="/dashboard/myOrder">
+                                                    My Orders
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/dashboard/customerReview">
+                                                    My Reviews
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink end to="/home">
+                                                    Back To Home
+                                                </NavLink>
+                                            </li>
+                                        </>
+                                    }
                                 </ul>
                             </div>
 
@@ -88,6 +99,9 @@ const Dashboard = () => {
                                 <div className="dashboard-menu">
                                     <ul>
                                         <>
+                                            {
+                                                userInfo.roll === "admin" ? <h1>admin</h1> : <h1>clesng</h1>
+                                            }
                                             <li>
                                                 <NavLink end to="/dashboard/myOrder">
                                                     My Orders
@@ -129,7 +143,7 @@ const Dashboard = () => {
                                             <li>
                                                 <NavLink end to="/home">
                                                     Back To Home
-                                              </NavLink>
+                                                </NavLink>
                                             </li>
                                         </>
 
