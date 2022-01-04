@@ -11,6 +11,7 @@ import ViewProduct from './Components/ViewProduct/ViewProduct';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Checkout from './Components/Checkout/Checkout';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:category" element={<FilteredProduct />} />
           <Route path="/products/:category/:productId" element={<ViewProduct />}></Route>
+          <Route path="/products/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>}></Route>
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>}></Route>
           <Route path="*" element={<NotFoundPage />} />
 

@@ -7,8 +7,6 @@ import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
 
-
-
     const cart = useSelector((state) => state.products.cart);
     const totalPrice = useSelector((state) => state.products.totalPrice);
     const dispatch = useDispatch();
@@ -34,7 +32,7 @@ const Cart = () => {
                 <div>
                 { !cart.length ? <h4 className="text-center mt-5">Cart Empty</h4> :
                     cart?.map(product => <>
-                        <Row className="m-0 border-bottom">
+                        <Row className="m-0 border-bottom" key={product.id}>
                     {/* cart item img  */}
                     <Col lg={4} md={4} sm={4} xs={4} className="d-flex align-items-center">
 
