@@ -3,6 +3,7 @@ import { Button, Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrementQuantity, incrementQuantity, removeProduct } from '../../redux/slice';
 import './Cart.css'
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
 
@@ -30,14 +31,15 @@ const Cart = () => {
 
             {/* cart item  */}
             <div className="full-cart">
+                <div>
                 { !cart.length ? <h4 className="text-center mt-5">Cart Empty</h4> :
                     cart?.map(product => <>
-                        <Row className="m-0">
+                        <Row className="m-0 border-bottom">
                     {/* cart item img  */}
                     <Col lg={4} md={4} sm={4} xs={4} className="d-flex align-items-center">
 
                         {/* cart item remove  */}
-                        <button onClick={() => handleRemoveCartItem(product)} className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0"><i class="fal fa-times-circle"></i></button> 
+                        <button onClick={() => handleRemoveCartItem(product)} className="text-decoration-underline d-inline bg-transparent border-0 p-0 m-0"><i className="fal fa-times-circle"></i></button> 
 
                         <img src={product?.img} alt={product?.name} className="img-responsive w-100"/>
 
@@ -55,11 +57,11 @@ const Cart = () => {
                                     {/* qunatity inc dec  */}
                                 <div className="quantity-counter my-2 mx-1">
                                     <button id="inc" onClick={() => handleDecrementQuantity(product)}>
-                                        <i class="fal fa-minus"></i>
+                                        <i className="fal fa-minus"></i>
                                     </button>
                                     <input type="number" min="1" value={product?.quantity} disabled/>
                                     <button id="dec" onClick={() => handleIncrementQuantity(product)}>
-                                        <i class="fal fa-plus"></i>
+                                        <i className="fal fa-plus"></i>
                                     </button>
                                 </div> 
                                 </Col>
@@ -67,12 +69,13 @@ const Cart = () => {
 
                     </Col>
                     </Row>
-                </>)
-            }
+                    </>)
+                }
+                </div>
 
             <div className="my-3 checkout-cart">
                 <p className="d-flex justify-content-between align-items-center mx-0 px-2 my-2"><span className="total">Total:</span> <span>${totalPrice}</span></p>
-                <Button variant="outline-dark" className="d-block mx-auto">PROCEED TO CHECKOUT</Button>
+                <Button as={NavLink} to="/products/checkout"  variant="outline-dark" className="d-block mx-auto w-75">PROCEED TO CHECKOUT</Button>
             </div>
 
             </div>

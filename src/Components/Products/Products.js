@@ -41,7 +41,7 @@ const Products = () => {
         <div>
             <div className="container mx-auto d-flex justify-content-between my-5 align-items-center">
                 <p className='m-0'>Total Product found {products.length}</p>
-                <select class="form-select d-inline w-auto" aria-label=".form-select-lg example">
+                <select className="form-select d-inline w-auto" aria-label=".form-select-lg example">
                     <option value="Best Match">Best Match</option>
                     <option value="Low to High">Low to High</option>
                     <option value="High to Low">High to Low</option>

@@ -128,16 +128,16 @@ const ViewProduct = () => {
                 <Button variant="outline-dark" className="d-block w-100 mx-auto mt-2">BUY IT NOW</Button>
                 <div className="share-card d-flex justify-content-between align-items-center my-2">
                     <p className="m-0">Share:
-                    <i class="fab fa-facebook-f ms-3"></i>
-                    <i class="fab fa-twitter ms-3"></i>
-                    <i class="fab fa-instagram ms-3"></i>
-                    <i class="fab fa-pinterest-p ms-3"></i>
-                    <i class="fab fa-facebook-messenger ms-3"></i>
-                    <i class="fal fa-envelope ms-3"></i>
+                    <i className="fab fa-facebook-f ms-3"></i>
+                    <i className="fab fa-twitter ms-3"></i>
+                    <i className="fab fa-instagram ms-3"></i>
+                    <i className="fab fa-pinterest-p ms-3"></i>
+                    <i className="fab fa-facebook-messenger ms-3"></i>
+                    <i className="fal fa-envelope ms-3"></i>
                     </p>
 
                     <p className="m-0">
-                    <i class="fal fa-question-circle"></i>
+                    <i className="fal fa-question-circle"></i>
                         Ask A Question
                     </p>
                 </div>
