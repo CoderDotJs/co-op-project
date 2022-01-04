@@ -22,7 +22,7 @@ const Wishlist = () => {
 
             <div className="d-flex flex-column">
             {
-                wishlist.map(wish=>{
+                wishlist?.map(wish=>{
                     return(
                         <Row className="m-0 border-bottom" key={wish.id}>
 
@@ -64,7 +64,6 @@ const Wishlist = () => {
             </div> */}
 
             </div>
-
         </div>
         </div>
     );
