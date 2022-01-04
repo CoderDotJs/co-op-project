@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 import useFirebase from '../../firebase/useFirebase';
 import './Login.css'
@@ -69,9 +69,9 @@ const Login = () => {
                      </div>
                      <div className="col-md-12 mb-3">
                         <p className="text-center">
-                           <a href='#' onClick={signInWithGoogle} className="google btn mybtn"><i className="fab fa-google-plus">
+                           <span  onClick={signInWithGoogle} className="google btn mybtn"><i className="fab fa-google-plus">
                            </i> Register using Google
-                           </a>
+                           </span>
                         </p>
                      </div>
                   </form>

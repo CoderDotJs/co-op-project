@@ -43,7 +43,7 @@
     border-radius: 10px;
     border: 2px solid gray;
 }
-.fa-user{
+.fa-user, .fa-chart-line{
     padding: 15px;
     font-size: 16px;
     background-color: #DEEFC4;
@@ -55,7 +55,7 @@
     margin-right: 10px;
     transition: border-radius 0.4s ease;
 }
-.fa-user:hover{
+.fa-user:hover, .fa-chart-line:hover{
     border-radius: 5px;
 }
 #basic-navbar-nav{
@@ -97,7 +97,7 @@
     background: #F4C340;
     border: 2px solid white;
 }
-.fa-shopping-bag{
+.fa-cart-plus{
     padding: 15px;
     font-size: 16px;
     background-color: rgba(244,195,64,.2);
@@ -108,7 +108,7 @@
     color: rgba(244,195,64,1);
     transition: border-radius 0.4s ease;
 }
-.fa-shopping-bag:hover{
+.fa-cart-plus:hover{
     border-radius: 5px;
 }
 .category{

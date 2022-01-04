@@ -94,11 +94,15 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="" >
           <Nav className="mx-auto navs">
             <Nav.Item className="d-flex justify-content-center align-items-center fw-normal mx-2">
-              <i 
+              {user ? <i class="far fa-chart-line " style={{cursor: 'pointer'}} 
+              onClick={()=>navigate('/dashboard')}></i>
+              :
+                <i 
               className="far fa-user " 
               style={{cursor: 'pointer'}} 
               onClick={()=>navigate('/dashboard')}
               ></i>
+              }
 
 
 
@@ -155,7 +159,7 @@ const Header = () => {
             </Nav.Item>
             <Nav.Item className="mx-2 d-flex justify-content-center align-items-center">
               <button type="button" className="border-0 p-0 position-relative" onClick={toggleDrawer('right', true)}>
-                <i className="fal fa-shopping-bag"></i>
+                <i class="fal fa-cart-plus"></i>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill pill-bg">
                   {cart.length}
                   <span className="visually-hidden">Cart</span>

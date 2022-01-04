@@ -20,6 +20,10 @@ const Wishlist = () => {
 
             {/* cart item  */}
 
+            { wishlist.length < 1 
+            ? 
+            <h4 className="text-center my-5">No Wishlist</h4>
+            : 
             <div className="d-flex flex-column">
             {
                 wishlist.map(wish=>{
@@ -63,7 +67,7 @@ const Wishlist = () => {
                 <Button variant="outline-dark" className="d-block mx-auto">PROCEED TO CHECKOUT</Button>
             </div> */}
 
-            </div>
+            </div>}
 
         </div>
         </div>

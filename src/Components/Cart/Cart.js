@@ -71,10 +71,14 @@ const Cart = () => {
                 }
                 </div>
 
-            <div className="my-3 checkout-cart">
+            {
+                cart.length > 0 
+                && 
+                <div className="my-3 checkout-cart">
                 <p className="d-flex justify-content-between align-items-center mx-0 px-2 my-2"><span className="total">Total:</span> <span>${totalPrice}</span></p>
                 <Button as={NavLink} to="/products/checkout"  variant="outline-dark" className="d-block mx-auto w-75">PROCEED TO CHECKOUT</Button>
             </div>
+            }
 
             </div>
 
