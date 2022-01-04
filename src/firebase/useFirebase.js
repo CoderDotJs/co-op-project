@@ -107,7 +107,7 @@ const useFirebase = () => {
             if(data.length === 0){
                 console.log(data)
                 saveUserDB(addUser)
-                // console.log(addUser);
+                // console.log(addUser); 
                 
         }
     })
