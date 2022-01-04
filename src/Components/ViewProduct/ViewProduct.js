@@ -87,7 +87,7 @@ const ViewProduct = () => {
     
 
     useEffect(()=>{
-        fetch('https://raw.githubusercontent.com/CoderDotJs/co-op-project/main/src/Components/Products/products.json')
+        fetch('https://softy-shop-web.herokuapp.com/products')
         .then(res => res.json())
         .then(data => dispatch(setProducts(data)))
     }, [])
