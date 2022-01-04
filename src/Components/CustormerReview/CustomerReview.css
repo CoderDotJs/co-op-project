@@ -1,0 +1,20 @@
+.swiper-pagination-bullet{
+    display: inline-block;
+    border: 5px solid #61CE70;
+    background: white;
+    width: 15px;
+    height: 15px;
+}
+.swiper-pagination{
+    position: absolute;
+    padding: 10px 0;
+}
+#customer-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 3px solid #61CE70;
+}
+
+  
