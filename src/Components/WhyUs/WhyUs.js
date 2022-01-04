@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const WhyUs = () => {
     return (
-        <Container>
+        <Container className="my-5">
             <Row>
                 <Col lg={3} md={3} sm={6} xs={12} className="g-3 d-flex justify-content-start align-items-center text-left">
                     <i class="fal fa-3x fa-shipping-fast"></i>

@@ -29,7 +29,7 @@ const CustomerReview = () => {
         spaceBetween={30} 
         slidesPerGroup={3} 
         loop={true} 
-        loopFillGroupWithBlank={true} 
+        loopFillGroupWithBlank={false} 
         pagination={{
         "clickable": true,
         }} 
