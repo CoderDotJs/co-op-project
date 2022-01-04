@@ -10,7 +10,10 @@ const Checkout = () => {
     const { register, handleSubmit } = useForm();
     
     const onSubmit = (data) => {
-        console.log(data)
+        data.orderProducts = cart;
+        data.totalPrice = totalPrice;
+        console.log(data);
+        console.log(cart);
       };
 
     return (
